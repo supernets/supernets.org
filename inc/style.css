@@ -1,0 +1,23 @@
+body{padding-top:1.5rem;padding-bottom:1.5rem;}
+main{padding-bottom:1.5rem;}
+main h3{font-weight:bolder;}
+
+.footer,.header,.marketing {padding-left:1rem;padding-right:1rem;}
+
+.bolder{font-weight:bolder;}
+.footer{border-top:.05rem solid #e5e5e5;color:#777;padding-top:1.5rem;}
+.header{border-bottom:.05rem solid #e5e5e5;padding-bottom:1rem;}
+.header h3{font-weight:bolder;line-height:3rem;margin-bottom:0;margin-top:0;}
+.jumbotron {border-bottom:.05rem solid #e5e5e5;text-align:center;}
+.jumbotron h1{font-weight:bolder;}
+.marketing{margin: 3rem 0;}
+.marketing p + h4{margin-top:1.5rem;}
+
+@media (min-width: 48em) {
+	.container{max-width:46rem;}
+}
+
+@media screen and (min-width: 48em) {
+	.footer,.header,.marketing{padding-left:0;padding-right:0;}
+	.header{margin-bottom:2rem;}
+}

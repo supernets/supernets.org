@@ -1,0 +1,21 @@
+https://en.wikipedia.org/wiki/Warrant_canary
+
+As of 2018-01-01 no warrants have ever been served to SuperNETs, its owners or its employees. No searches or seizures of any kind have ever been performed on SuperNETs assets. SuperNETs has no direct or indirect knowledge of any backdoors, or potential backdoors in our servers or network and SuperNETs has not received any requests to implement a backdoor. SuperNETs has never disclosed any user communications to any third party.
+
+Our PGP public key info is as follows: 
+
+[Link to your public key(s)]
+KeyID: [Public key ID]
+Fingerprint: [Public key fingerprint]
+
+The following news headlines are taken from [News source] to prove that the update could not have been created prior to the above-mentioned date.
+
+[News headline] [News URL]
+
+[News headline] [News URL]
+
+[News headline] [News URL]
+
+[News headline] [News URL]
+
+[News headline] [News URL]

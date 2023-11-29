@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>SuperNETs</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="SuperNETs">
+		<meta name="description" content="A secure and anonymous, censorship-free, public environment for communication.">
+		<meta name="keywords" content="anonymous, chat, internet, irc, ircd, network, relay, secure, super, nets, supernets, xmpp">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="../i/favicon.png">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js" integrity="sha256-AoNQZpaRmemSTxMy9xcqXX5VLwI6IMPYugO7bFHOW+U=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<link href="../inc/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<header class="header clearfix">
+				<nav class="navbar navbar-expand-lg navbar-light bg-white">
+					<a class="navbar-brand text-muted bolder" href="#">SUPERNETS</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="../docs.html">Docs</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Network</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="https://git.supernets.org/">Git</a>
+									<a class="dropdown-item" href="../irc.html">IRC</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<main role="main">
+				<center><h4>User Modes</h4></center>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th width="10%">Mode</th>
+							<th>Description</th>
+							<th width="10%">Restrictions</th>
+						</tr>
+					</thead>
+					<tbody class="text-left">
+						<tr>
+							<td><b>B</b></td>
+							<td>Adds a line in WHOIS replies marking you as a bot.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>d</b></td>
+							<td>Only see messages prefixed with the <code>`!@$.</code> character <i>(Used to reduce traffic for bots)</i>.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>D</b></td>
+							<td>Only receive private messages from network operators, servers & services.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>H</b></td>
+							<td>Hide IRCOp status in WHOIS replies.</td>
+							<td><i>IRCOp-only</i></td>
+						</tr>
+						<tr>
+							<td><b>I</b></td>
+							<td>Hide online time in WHOIS replies.</td>
+							<td><i>IRCOp-only</i></td>
+						</tr>
+						<tr>
+							<td><b>i</b></td>
+							<td>Hidden from WHO & NAMES if queried by someone outside the channel.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>o</b></td>
+							<td>IRC Operator</td>
+							<td><i>Set by server</i></td>
+						</tr>
+						<tr>
+							<td><b>p</b></td>
+							<td>Hide channels in WHOIS replies.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>q</b></td>
+							<td>Unkickable.</td>
+							<td><i>IRCOp-only</i></td>
+						</tr>
+						<tr>
+							<td><b>r</b></td>
+							<td>Registered nick.</td>
+							<td><i>Set by services</i></td>
+						</tr>
+						<tr>
+							<td><b>R</b></td>
+							<td>Only receive private messages from registered nicks.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>S</b></td>
+							<td>Services bot.</td>
+							<td><i>Services-only</i></td>
+						</tr>
+						<tr>
+							<td><b>s</b></td>
+							<td>Receive Server notices.</td>
+							<td><i>IRCOp-only</i></td>
+						</tr>
+						<tr>
+							<td><b>T</b></td>
+							<td>Prevents receiving CTCP's.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>t</b></td>
+							<td>VHOST has been set.</td>
+							<td><i>Set by server</i></td>
+						</tr>
+						<tr>
+							<td><b>x</b></td>
+							<td>Use a cloaked hostname.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>Z</b></td>
+							<td>Only able to send/receive private messages/notices/CTCP's with people using SSL/TLS.</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><b>z</b></td>
+							<td>Connected using SSL/TLS.</td>
+							<td><i>Set by server</i></td>
+						</tr>
+					</tbody>
+				</table>
+			</main>
+			<footer class="footer">
+				<p>&copy; Supernets 2019</p>
+			</footer>
+		</div>
+	</body>
+</html>

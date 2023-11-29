@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>SuperNETs</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="SuperNETs">
+		<meta name="description" content="A secure and anonymous, censorship-free, public environment for communication.">
+		<meta name="keywords" content="anonymous, chat, internet, irc, ircd, network, relay, secure, super, nets, supernets, xmpp">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="../i/favicon.png">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js" integrity="sha256-AoNQZpaRmemSTxMy9xcqXX5VLwI6IMPYugO7bFHOW+U=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<link href="../inc/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<header class="header clearfix">
+				<nav class="navbar navbar-expand-lg navbar-light bg-white">
+					<a class="navbar-brand text-muted bolder" href="#">SUPERNETS</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="../docs.html">Docs</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Network</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="https://git.supernets.org/">Git</a>
+									<a class="dropdown-item" href="../irc.html">IRC</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<main role="main">
+				<p>SSL Certificates can be used by your IRC client as a form of identification.
+				The certificate fingerprint will be unique and will remain the same no matter what client or host you are using.
+				This is useful for identification to people who may have a dynamic IP address.
+				Certain things like NickServ, OperServ, and other bots can use certificate fingerprints as a form of passwordless authentication.
+				Also, please note that in order to use an SSL certificate, you have to connect to the IRC using SSL aswell.</p>
+				<hr>
+				<br>
+				<h4>Create an SSL Certificate</h4>
+				<br>
+				<h5 class="text-muted">Linux</h5>
+				Open your terminal and issue the following command:
+				<br><code>openssl req -x509 -new -newkey rsa:4096 -sha256 -days 3650 -nodes -out nick.pem -keyout nick.pem</code>
+				<br><br>Make sure to <code>chmod 400 nick.pem</code> so that only you can read that file.</li>
+				<br><br>
+				<h5 class="text-muted">Windows</h5>
+				<ul>
+					<li>Download & Install <a href="http://www.slproweb.com/products/Win32OpenSSL.html">OpenSSL</a></li>
+					<li>Open command promt</li>
+					<li><code>cd C:\OpenSSL\bin</code></li>
+					<li><code>OpenSSL</code></li>
+					<li><code>req -newkey rsa:2048 -days 3650 -x509 -keyout irc.key -out irc.crt -nodes</code></li>
+					<li>Hit <kbd>Ctrl+C</kbd> to exit out of the OpenSSL program.</li>
+					<li><code>copy irc.cer+irc.key &lt;nick&gt;.pem</code></li>
+				</ul>
+				<br><hr><br>
+				<h4>NickServ Usage</h4>
+				Once you setup your client to use your certificate, you can then add it to your NickServ account.
+				<br>Identify to your nick with <code>/NickServ identify &lt;nick&gt; &lt;password&gt;</code>, and then do <code>/NickServ CERT ADD</code>.
+				<br><b>Note:</b> This will add the fingerprint of the certificate you are using to connect to your NickServ account.
+				<br><br>Once you have your fingerprint added to your NickServ account, you no longer need to send a <code>/NickServ identify</code> command. You will automatically be identified upon connection, so as long as you connect with a client certificate thats fingerprint matches the one added to your NickServ account.
+				<br><hr><br>
+				<h4>Client Usage</h4>
+				<br>
+				<h5 class="text-muted">AndroIRC</h5>
+				<ul>
+					<li>In order to use your certificate in AndroIRC, you'll need to convert it to the PKCS12 format.</li>
+					<li>openssl pkcs12 -in &lt;nick&gt;.pem -export &lt;nick&gt;.pfx</li>
+					<li>Place your certificate file in the <i>AndroIRC/certs/</i> directory.</li>
+					<li>Edit the settings for your IRC network in AndroIRC and check the ‘Use SSL certificate’ option, and edit the ‘SSL certificate filename’ to match the name of your certificate file. If you have set a password for your certificate, enter it in the ‘SSL certificate password’ option. Be sure that Use secured connection is checked before trying to use an SSL certificate.</li>
+				</ul>
+				<br>
+				<h5 class="text-muted">HexChat / XChat</h5>
+				<ul>
+					<li>HexChat uses the pem file that corresponds with the name of the network under Network list.</li>
+					<li>Place your certificate file in the <i>~/.config/hexchat/certs/&lt;network_name&gt;.pem</i> directory.</li>
+					<li>For Windows users, place your certificate in the <i>%APPDATA%\HexChat\certs\&lt;network_name&gt;.pem</i> directory. <small><i>(The file must be named client.pem)</i></small>
+					<li>Edit the settings for your network and check the ‘Use SSL for all servers on this network’ option and the ‘Accept invalid SSL certificates’ option.</li>
+					<li><b>Note:</b> The same settings apply for XChat except the cert directory is in <i>~/.xchat2/</i> for Linux and in <i>%APPDATA%\Roaming\X-Chat 2</i> for Windows.
+				</ul>
+				<br>
+				<h5 class="text-muted">irssi</h5>
+				<ul>
+					<li>Place your certificate file in the <i>~/.irssi/certs/</i> directory.</li>
+					<li>/server add -ssl -ssl_cert ~/.irssi/certs/&lt;nick&gt;.pem -network &lt;network_name&gt; &lt;network_address&gt; &lt;ssl_port&gt;</li>
+				</ul>
+				<br>
+				<h5 class="text-muted">mIRC</h5>
+				<ul>
+					<li>Options Menu -> Connect -> Options</li>
+					<li>Click on the SSL button.</li>
+					<li>Click on the empty box below ‘Private Key File’, navigate to where you placed your nick.pem file and select it.</li>
+					<li>Do the same for ‘Certificate Chain File’.</li>
+				</ul>
+				<br>
+				<h5 class="text-muted">WeeChat</h5>
+				<ul>
+					<li>Place your certificate file in the <i>~/.weechat/certs/</i> directory.</li>
+					<li>/set irc.server.&lt;network_name&gt;.ssl on</li>
+					<li>/set irc.server.&lt;network_name&gt;.ssl_cert %h/certs/&lt;nick&gt;.pem</li>
+					<li>/set irc.server.&lt;network_name&gt;.ssl_verify off</li>
+				</ul>
+				<br>
+				<h5 class="text-muted">ZNC</h5>
+				<ul>
+					<li>Place your certificate file in the <i>~/.znc/users/&lt;user&gt;/moddata/cert/&lt;nick&gt;.pem</i> directory.</li>
+					<li>/znc LoadMod cert</li>
+					<li>/znc LoadMod certauth</li>
+					<li>/msg *certauth add</li>
+					<li>You can now connect without a passord by sending "username/network:" to the ZNC server.</li>
+				</ul>
+			</main>
+			<footer class="footer">
+				<p>&copy; Supernets 2019</p>
+			</footer>
+		</div>
+	</body>
+</html>
