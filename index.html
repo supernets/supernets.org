@@ -1,67 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>SuperNETs</title>
-		<meta charset="UTF-8">
-		<meta name="author" content="SuperNETs">
-		<meta name="description" content="A secure and anonymous, censorship-free, public environment for communication.">
-		<meta name="keywords" content="anonymous, chat, internet, irc, ircd, network, relay, secure, super, nets, supernets, xmpp">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" type="image/png" href="i/favicon.png">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js" integrity="sha256-AoNQZpaRmemSTxMy9xcqXX5VLwI6IMPYugO7bFHOW+U=" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<link href="inc/style.css" rel="stylesheet">
-	</head>
-	<body>
-		<div class="container">
-			<header class="header clearfix">
-				<nav class="navbar navbar-expand-lg navbar-light bg-white">
-					<a class="navbar-brand text-muted bolder" href="#">SUPERNETS</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto">
-							<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-							<li class="nav-item"><a class="nav-link" href="donate.html">Donate</a></li>
-							<li class="nav-item"><a class="nav-link" href="docs.html">Docs</a></li>
-							<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-						</ul>
-					</div>
-				</nav>
-			</header>
-			<main role="main">
-				<div class="jumbotron">
-					<h1>SuperNETs</h1>
-					<p><i>"runnin shit since the ping pong dynasty."</i></p>
-					<a class="btn btn-lg btn-success" href="http://webchat.supernets.org/" role="button">Get on IRC</a>
-				</div>
-				<div class="row marketing">
-					<div class="col-lg-6">
-						<h4>Free of Cost</h4>
-						<p>The services that we run here are completely free to the public & always will be!</p>
-						<h4>Privacy & Security</h4>
-						<p>We take the privacy of our users & the security of our network very seriously.</p>
-						<h4>Zero Censorship</h4>
-						<p>All communications are censorship-free with very little moderation taken into praxis.</p>
-					</div>
-					<div class="col-lg-6">
-						<h4>Open Source</h4>
-						<p>Transparency is a applied to our entire network infrastructure.</p>
-						<h4>Anonymous Communications</h4>
-						<p>Remain hidden & anonymous while using our services. No personal information is required.</p>
-						<h4>No Logs</h4>
-						<p>All of our servers & services store zero logs or identifiable information on its users.</p>
-					</div>
-				</div>
-			</main>
-			<footer class="footer">
-				<p>&copy; Supernets 2024</p>
-			</footer>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SuperNETs</title>
+	<meta name="author" content="SuperNETs">
+	<meta name="description" content="A secure and anonymous, censorship-free, public environment for communication.">
+	<meta name="keywords" content="anonymous, chat, internet, irc, ircd, network, relay, secure, super, nets, supernets">
+	<link rel="icon" type="image/x-icon" href="i/favicon.ico">
+	<link href="inc/style.css" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<div class="wrap">
+			<a href="#" class="brand"><img src="i/fist.png" alt="" class="brand-icon">SUPERNETS</a>
+			<button class="hamburger" onclick="document.querySelector('.links').classList.toggle('open')" aria-label="Menu">
+				<span></span><span></span><span></span>
+			</button>
+			<div class="links">
+				<a href="#about">About</a>
+				<a href="#services">Services</a>
+				<a href="#support">Support</a>
+				<a href="#contact">Contact</a>
+			</div>
 		</div>
-	</body>
+	</nav>
+
+	<div class="wrap">
+		<div class="hero">
+			<img src="i/logo.png" alt="SuperNETs" class="logo">
+			<h1>SUPERNETS</h1>
+			<p class="tagline">"runnin shit since the ping pong dynasty."</p>
+			<a href="https://webchat.supernets.org/" class="cta">Get on IRC</a>
+		</div>
+
+		<div id="about" class="features fade-in">
+			<div class="feature">
+				<div class="icon">&#x1f4b8;</div>
+				<h3>Free of Cost</h3>
+				<p>All services we run are completely free to the public &amp; always will be.</p>
+			</div>
+			<div class="feature">
+				<div class="icon">&#x1f512;</div>
+				<h3>No Trace</h3>
+				<p>Our network infrastructure is secure &amp; will store zero logs and/or identifiable information on its users.</p>
+			</div>
+			<div class="feature">
+				<div class="icon">&#x1f5e3;</div>
+				<h3>Zero Censorship</h3>
+				<p>All communications are censorship-free with very little moderation taken into praxis.</p>
+			</div>
+			<div class="feature">
+				<div class="icon">&#x1f4bb;</div>
+				<h3>Open Source</h3>
+				<p>Transparency is applied to our entire network infrastructure.</p>
+			</div>
+			<div class="feature">
+				<div class="icon">&#x1f47b;</div>
+				<h3>Anonymous</h3>
+				<p>Remain hidden &amp; anonymous while using our services. No personal information required.</p>
+			</div>
+			<div class="feature">
+				<div class="icon">&#x1f60e;</div>
+				<h3>Deal With It</h3>
+				<p>We are not constituents to any group, collective, or organization, nor do we claim to be one.</p>
+			</div>
+		</div>
+
+		<div class="grid grid-2 fade-in" style="padding-bottom:2rem;">
+			<div class="card">
+				<h3>// Ground Zero</h3>
+				<p>Supernets is an <abbr title="Internet Relay Chat">IRC</abbr> network founded in early 2015 by an amalgam of individuals aiming to provide a secure &amp; anonymous, censorship-free, environment for communication. The idea started after many years of using internet relay chat &amp; seeing every network ran by operators who seem to have forgotten the meaning of <em>freedom of speech</em>.</p>
+			</div>
+			<div class="card">
+				<h3>// Network Covenant</h3>
+				<p>All communications are censorship-free, &amp; we take very little moderation into praxis, so explicit content may be prevalent. Communication is free &amp; there is no right or wrong way to do it. What separates us from the rest is the freedom that we offer without restrictions. You can troll opers, run bots, pump ASCII/ANSI art, &amp; everything in between. <abbr title="Internet Relay Chat">IRC</abbr> is the wild west of social networking &amp; without the chaos it's no fun...</p>
+			</div>
+		</div>
+
+		<section id="services" class="fade-in" style="padding-top:2rem;">
+			<h2 class="section-title">// Services</h2>
+			<div class="services-grid">
+				<a href="https://badtests.supernets.org" class="service-card" target="_blank">
+					<div class="service-icon" style="color:#ff3c3c">☠</div>
+					<h3>Badtests</h3>
+					<p>Security fuzzing for browsers, programming languages &amp; curl.</p>
+				</a>
+				<a href="https://git.supernets.org/" class="service-card" target="_blank">
+					<div class="service-icon">🔀</div>
+					<h3>Git</h3>
+					<p>Git powered code hosting &amp; collaboration.</p>
+				</a>
+				<a href="https://hardchats.com" class="service-card" target="_blank">
+					<div class="service-icon">🎙️</div>
+					<h3>Hardchats</h3>
+					<p>WebRTC voice &amp; video chat with IRC as the backend chat protocol.</p>
+				</a>
+				<a href="https://hardfiles.org" class="service-card" target="_blank">
+					<div class="service-icon">📤</div>
+					<h3>Hardfiles</h3>
+					<p>Anonymous file upload &amp; sharing service that is deleted after 24 hours.</p>
+				</a>
+				<a href="irc://irc.supernets.org:6667" class="service-card">
+					<div class="service-icon">💬</div>
+					<h3>IRC</h3>
+					<p>Our core Internet Relay Chat network.</p>
+				</a>
+				<a href="telnet://irctun.supernets.org:6667" class="service-card">
+					<div class="service-icon">⌨️</div>
+					<h3>IRCtun</h3>
+					<p>Telnet gateway to the IRC for a "clientless" connection.</p>
+				</a>
+				<a href="https://mqtt.supernets.org" class="service-card" target="_blank">
+					<div class="service-icon">📡</div>
+					<h3>MQTT</h3>
+					<p>Lightweight pub/sub messaging broker for Meshtastic.</p>
+				</a>
+				<a href="https://push.supernets.org" class="service-card" target="_blank">
+					<div class="service-icon">🔔</div>
+					<h3>Push</h3>
+					<p>Push notifications powered by Gotify.</p>
+				</a>
+				<a href="https://status.supernets.org" class="service-card" target="_blank">
+					<div class="service-icon">🟢</div>
+					<h3>Status</h3>
+					<p>Uptime monitoring for all services.</p>
+				</a>
+				<a href="https://webchat.supernets.org" class="service-card" target="_blank">
+					<div class="service-icon">🌐</div>
+					<h3>Webchat</h3>
+					<p>Browser-based IRC client for on the go chats.</p>
+				</a>
+				<a href="https://git.supernets.org/supernets/wiki/wiki" class="service-card" target="_blank">
+					<div class="service-icon">📖</div>
+					<h3>Wiki</h3>
+					<p>Documentation, guides &amp; knowledge base.</p>
+				</a>
+				<div class="service-card service-card-soon">
+					<div class="service-icon">🔮</div>
+					<h3>Coming Soon</h3>
+					<p>Who knows what we're up to next...</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="grid grid-2 fade-in" style="padding:2.5rem 0;">
+			<div id="support" class="bottom-card">
+				<h2 class="section-title">// Support</h2>
+				<h3>We do not want your fucking money.</h3>
+				<small>However, for those want to support us anyway...</small>
+				<a href="https://patreon.com/supernets" class="cta cta-sm" target="_blank">Patreon</a>
+			</div>
+			<div id="contact" class="bottom-card">
+				<h2 class="section-title">// Contact</h2>
+				<h3>Got something to say?</h3>
+				<small>Drop us a line. No response guaranteed.</small>
+				<a href="mailto:admin@supernets.org" class="cta cta-sm">Email Us</a>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="wrap">
+			<p>&copy; SUPERNETS 2026</p>
+			<span class="sep">&bull;</span>
+			<div class="footer-icons">
+				<a href="https://github.com/supernets" target="_blank"><img src="i/github.svg" alt="GitHub"></a>
+				<a href="https://www.reddit.com/user/supernets" target="_blank"><img src="i/reddit.svg" alt="Reddit"></a>
+				<a href="https://twitter.com/super_nets" target="_blank"><img src="i/twitter.svg" alt="Twitter"></a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		const obs = new IntersectionObserver(entries => {
+			entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+		}, { threshold: 0.1 });
+		document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+		// close mobile menu on link click
+		document.querySelectorAll('nav .links a').forEach(a => {
+			a.addEventListener('click', () => document.querySelector('.links').classList.remove('open'));
+		});
+	</script>
+</body>
 </html>
