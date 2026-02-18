@@ -681,23 +681,6 @@ table tbody tr:hover { background: var(--green-bg); }
 	line-height: 1.5;
 }
 
-.service-card-soon {
-	cursor: default;
-	opacity: .45;
-	border-style: dashed;
-}
-
-.service-card-soon:hover {
-	border-color: var(--border);
-	transform: none;
-	box-shadow: none;
-	opacity: .55;
-}
-
-.service-card-soon:hover h3 {
-	color: #fff;
-}
-
 /* ---------- bottom cards (support / contact) ---------- */
 .bottom-card {
 	background: var(--bg-card);
